@@ -17,6 +17,7 @@ before_install:
   - pip install flake8
   - pip install coveralls
   - pip install pymongo
+  - pip install requests
 
 # install:
 #   - ./setup.py install
@@ -24,4 +25,5 @@ before_install:
 script:
   - flake8 web-dashboards
   - web-dashboards/ossmeter-metrics/mongo2es.py -g -a -e http://localhost:9200 -i ossmeter
+  - web-dashboards/ossmeter-metrics/tests/check_gelk_perceval_total.py
 
