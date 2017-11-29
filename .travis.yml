@@ -12,7 +12,7 @@ services:
 before_install:
   - sleep 15
   - tar xfz web-dashboards/ossmeter-metrics/data/mongo-ossmeter-dump.tgz
-  - mongorestore dump
+  - mongorestore dump > /dev/null 2>&1
   - pip install -r "web-dashboards/requirements.txt"
   - pip install flake8
   - pip install coveralls
